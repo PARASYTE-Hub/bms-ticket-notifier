@@ -600,16 +600,17 @@ def main():
 
     save_state(new_state)
 
-    if changes:
-        print(f"\n  ⚡ {len(changes)} change(s) detected:")
-        for c in changes:
-            print(f"     {c}")
-        send_email(
-            f"BMS Alert: {movie_info['name']} - {len(changes)} change(s)",
-            changes, filtered, movie_info,
-        )
-    else:
-        print("  ✅ No changes since last check.")
+# Force a test email
+changes = ["🧪 This is a test email from the BMS Ticket Notifier."]
+
+send_email(
+    "BMS Test Email",
+    changes,
+    filtered,
+    movie_info,
+)
+
+print("✅ Test email requested.")
 
     # Print current status
     print(f"\n  Current status ({len(filtered)} shows):")
