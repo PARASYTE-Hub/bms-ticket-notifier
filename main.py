@@ -18,6 +18,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
+print("BMS_URL =", os.getenv("BMS_URL"))
 
 # ──────────────────────────────────────────────────────────────────────
 # CONFIGURATION — edit these or set via env vars
